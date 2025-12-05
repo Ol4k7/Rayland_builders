@@ -1,0 +1,508 @@
+/* ================= VARIABLES ================= */
+:root {
+  --primary: #f4b400;      /* Construction yellow */
+  --dark: #1f2933;         /* Dark text */
+  --light: #ffffff;        /* Light text/background */
+  --gray: #6b7280;         /* Gray text */
+  --bg: #f9fafb;           /* Page background */
+  --card-bg: rgba(255,255,255,0.8);
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--dark);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ================= HEADER ================= */
+.header {
+  background: var(--light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+}
+
+.logo h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--primary);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero, .hero2 {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: center;    /* center horizontally */
+  justify-content: center; /* center vertically */
+  padding: 60px 20px;
+  border-radius: 16px;
+  gap: 1rem; /* optional spacing between h1 and p */
+}
+
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: blur(3px);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.1);
+  z-index: -1;
+}
+
+.hero-content, .hero2 {
+  text-align: center;
+  color: #000;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p, .hero-tagline {
+  font-size: 18px;
+  color: #000000;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--dark);
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 80px 0;
+}
+
+.section-light {
+  background: var(--bg);
+}
+
+/* ================= SERVICES GRID ================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: var(--card-bg);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.service-card p {
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-card, .contact-form {
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex: 1;          /* Makes them share the width equally */
+  min-width: 300px; /* Prevents them from getting too squashed */
+}
+
+.contact-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.contact-list i {
+  color: var(--primary);
+  width: 25px;
+  text-align: center;
+}
+
+.contact-list a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form button {
+  width: max-content;
+  padding: 12px 30px;
+  background: var(--primary);
+  border: none;
+  color: var(--dark);
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #111827;
+  color: #d1d5db;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 60px 0;
+}
+
+.footer h3, .footer h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+}
+
+/* ================= LEAFLET MAP ================= */
+#osm-map {
+  width: 100%;
+  max-width: 320px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  background: #e5e7eb;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.leaflet-tile, .leaflet-container img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .hero, .hero2 {
+    padding: 40px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .nav.show {
+    display: block;
+  }
+
+  .nav a {
+    display: block;
+    margin: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h1, .hero2 h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card, .contact-form {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  #osm-map {
+    max-width: 100%;
+    height: 220px;
+  }
+}
+
+/* HOME PAGE: SERVICES OVER HERO */
+.services-overlay {
+  margin-top: -100px;       /* Pull cards up over hero */
+  padding: 80px 20px 100px; /* Top padding pushes cards slightly down */
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.services-overlay .services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-overlay .service-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.services-overlay .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* MOBILE RESPONSIVE FOR OVERLAP */
+@media (max-width: 992px) {
+  .services-overlay {
+    margin-top: -80px;
+    padding: 60px 20px;
+  }
+  .services-overlay .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+/* ================= FOOTER MAP INTEGRATION ================= */
+
+/* Specific styling for the footer map column */
+.footer-map-column {
+  min-width: 250px;
+}
+
+.address-text {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+.address-text i {
+  color: var(--primary); /* Gold icon */
+  margin-right: 8px;
+}
+
+/* Map Container Styling */
+#osm-map {
+  width: 100%;
+  height: 180px; /* Slightly smaller height for footer */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  z-index: 1; /* Ensures map stays below navbar if sticky */
+}
+
+/* Link below map */
+.map-link a {
+  color: var(--primary);
+  text-decoration: none;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.map-link a:hover {
+  text-decoration: underline;
+}
+
+/* Fix for Leaflet z-index issues in footers */
+.leaflet-pane {
+  z-index: 1 !important; 
+}
+.leaflet-top, .leaflet-bottom {
+  z-index: 2 !important;
+}
+
+/* ================= FLOATING WHATSAPP BUTTON ================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* Official WhatsApp Green */
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 10000; /* High z-index ensures it floats above the map and footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Removes underline from link */
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e; /* Darker green on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Ensure the icon stays centered and clean */
+.whatsapp-float i {
+  margin-top: 1px; /* Tiny visual adjustment for vertical centering */
+}
+
+/* Adjust for mobile screens so it doesn't cover content */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 25px;
+  }
+}
