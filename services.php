@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Rayland Builders</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-</head>
-<body>
-  <header class="header">
-    <div class="container header-flex">
-      <div class="logo">
-        <h2>RAYLAND <span>BUILDERS</span></h2>
-      </div>
-      <nav class="nav" id="navMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html" class="active">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-toggle" id="menuToggle">☰</button>
-    </div>
-  </header>
+<?php $page_title = "Our Services"; include 'includes/header.php'; ?>
 
   <main>
     <section class="section section-light">
@@ -68,36 +42,4 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>RAYLAND BUILDERS</h3>
-        <p>Kitchen & Bathroom Installation<br>Plumbing, Heating & Electrical<br>Painting, Decoration & Tiling</p>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="tel:+447496597414">+44 74 9659 7414</a><br>
-        <a href="mailto:rashymil@gmail.com">rashymil@gmail.com</a>
-      </div>
-      <div class="footer-map-column">
-        <h4>Find Us</h4>
-        <p class="address-text"><i class="fas fa-map-marker-alt"></i> 3 Pipchin Road, Chelmsford, CM1 4XT</p>
-        <div id="osm-map"></div>
-        <p class="map-link">
-          <small><a href="#" id="osm-link" target="_blank" rel="noopener">View larger map</a></small>
-        </p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> Rayland Builders Services. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/js/main.js"></script>
-
-  <a href="https://wa.me/447496597414" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-  <i class="fa-brands fa-whatsapp"></i>
-  </a>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
